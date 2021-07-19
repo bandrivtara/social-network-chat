@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Login:React.FC<PropsTypes> = () => {
+export const Chat:React.FC<PropsTypes> = () => {
     return (
         <div>
-            LoginPage welcome!
+            Chat Opened
         </div>
     );
 };

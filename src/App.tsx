@@ -1,17 +1,21 @@
 import './styles/index.scss'
-import {useIntl} from "react-intl";
-import {Button, Col, Row, Space} from 'antd';
+import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import {ChatContainer} from "./modules/chat/ChatContainer";
+import {PrivateRouteWrapper} from "./modules/auth/helpers/PrivateRouteWrapper";
+import {LoginContainer} from "./modules/auth/Login/LoginContainer";
+import {paths} from "./configs/paths";
 
 export function App() {
-    const intl = useIntl()
-
     return (
-        <Row className="">
-            <Space align={"center"}>
-                <Col span={18} offset={6}>
-                    test
-                </Col>
-            </Space>
-        </Row>
+        <Router>
+            <Switch>
+                <Route path={paths.login.path}>
+                    <LoginContainer/>
+                </Route>
+                <PrivateRouteWrapper>
+                    <ChatContainer/>
+                </PrivateRouteWrapper>
+            </Switch>
+        </Router>
     );
 }
