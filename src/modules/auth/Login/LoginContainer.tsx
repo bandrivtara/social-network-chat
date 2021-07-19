@@ -4,7 +4,7 @@ import {Login} from "./Login";
 export const LoginContainer:React.FC<PropsTypes> = () => {
 
     return (
-        <Login/>
+        <Login />
     );
 };
 
